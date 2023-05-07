@@ -1,9 +1,11 @@
 from flask import Flask, request
 from flasgger import Swagger
+from flask_cors import CORS
 import joblib
 import pickle
 
 app = Flask(__name__)
+CORS(app)
 swagger = Swagger(app)
 
 
@@ -49,4 +51,4 @@ def predict():
     }
 
 
-app.run(host="0.0.0.0", port=8080, debug=True)
+app.run(host="0.0.0.0", port=5000, debug=True)
